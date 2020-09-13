@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import "antd/dist/antd.css";
+
+import BasicUsage from "./examples/BasicUsage";
+import FormMethods from "./examples/FormMethods";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <S.App>
+      <div>
+        <BasicUsage></BasicUsage>
+      </div>
+
+      <div>
+        <FormMethods></FormMethods>
+      </div>
+    </S.App>
   );
 }
+
+const S = {};
+
+S.App = styled.div`
+  margin: 0 auto;
+  width: 62%;
+
+  > div {
+    border: 1px solid magenta;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+`;
 
 export default App;
